@@ -32,7 +32,7 @@ To install the `ComfyUI_pixtral_vision` node, follow these steps:
    pip install -r requirements.txt
    ```
 
-## Getting the API Key
+## Getting the free API Key
 1. Visit [Mistral AI](https://mistral.ai/) and sign up or log into your account.
 2. Navigate to the API section and follow the instructions to generate a new API key.
 3. Once you have your API key, enter it into the node configuration as described in the setup instructions.
