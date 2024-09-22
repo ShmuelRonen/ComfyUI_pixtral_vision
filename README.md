@@ -3,9 +3,9 @@ The `ComfyUI_pixtral_vision` is a powerful ComfyUI node designed to integrate se
 
 ![Pixtral](https://github.com/user-attachments/assets/74a4a8cb-5fb6-454e-94f2-095edd14e98f)
 
-Here is a sample `README.md` file for your GitHub repository that outlines the `ComfyUI_pixtral_vision` node:
 
-```markdown
+
+
 # ComfyUI_pixtral_vision Node
 
 ## Overview
