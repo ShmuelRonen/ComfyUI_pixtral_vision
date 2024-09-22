@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_pixtral_vision"
+description = "The ComfyUI_pixtral_vision is a powerful ComfyUI node designed to integrate seamlessly with the Mistral Pixtral API. It facilitates the analysis of images through deep learning models, interpreting and describing the visual content. Users can input an image directly and provide prompts for context, utilizing an API key for authentication."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["requests", "Pillow", "torch", "numpy"]
+
+[project.urls]
+Repository = "https://github.com/ShmuelRonen/ComfyUI_pixtral_vision"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_pixtral_vision"
+Icon = ""
