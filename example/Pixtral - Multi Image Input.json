@@ -1,0 +1,334 @@
+{
+  "last_node_id": 26,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": {
+        "0": 394,
+        "1": 5800
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        " (9).png",
+        "image"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadImage",
+      "pos": {
+        "0": 45,
+        "1": 5985
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4,
+            9
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "test.png",
+        "image"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "MultiImagesInput",
+      "pos": {
+        "0": 829,
+        "1": 5865
+      },
+      "size": {
+        "0": 210,
+        "1": 122
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 5,
+          "shape": 7
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": 9,
+          "shape": 7
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        3,
+        null
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "LoadImage",
+      "pos": {
+        "0": 394,
+        "1": 6184
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1,
+            10
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "flux_00715_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1213,
+        "1": 5824
+      },
+      "size": [
+        484.3642837244179,
+        680.978691758346
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 12,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Certainly! Here's a summary of the images you've shared:\n\n1. **Image 1**: A detailed illustration of a red robot with large, yellow eyes and two antennae on its head. The robot has a complex mechanical design with visible joints and mechanical parts.\n\n2. **Image 2**: A surreal image of a person with a glass dome on their head. Inside the dome, there are green plants growing. The person has pale skin and closed eyes, giving a futuristic and somewhat unsettling appearance.\n\n3. **Image 3**: A black and white photograph of a person receiving a head massage. The person being massaged has their eyes closed, relaxing, while another person's hands are placed on their head, providing the massage.\n\nThese images showcase creative and imaginative themes, including robotics, futuristic human enhancements, and relaxation/well-being practices."
+      ]
+    },
+    {
+      "id": 25,
+      "type": "ComfyUIPixtralVision",
+      "pos": {
+        "0": 826,
+        "1": 6063
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyUIPixtralVision"
+      },
+      "widgets_values": [
+        "how many images?",
+        "",
+        0.7
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      13,
+      0,
+      12,
+      2,
+      "IMAGE"
+    ],
+    [
+      3,
+      15,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      16,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      5,
+      15,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      16,
+      0,
+      24,
+      1,
+      "IMAGE"
+    ],
+    [
+      10,
+      13,
+      0,
+      24,
+      2,
+      "IMAGE"
+    ],
+    [
+      11,
+      24,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      25,
+      0,
+      26,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000011,
+      "offset": [
+        495.8952664583239,
+        -5514.586800236535
+      ]
+    }
+  },
+  "version": 0.4
+}
