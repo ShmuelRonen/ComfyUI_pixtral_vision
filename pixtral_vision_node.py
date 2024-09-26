@@ -9,31 +9,46 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+        
+        
 class MultiImagesInput:
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
                 "inputcount": ("INT", {"default": 2, "min": 2, "max": 1000, "step": 1}),
+            },
+            "optional": {
                 "image_1": ("IMAGE",),
                 "image_2": ("IMAGE",),
-            },
+            }
         }
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("images",)
     FUNCTION = "combine"
     CATEGORY = "ComfyUI/Pixtral Vision"
+    DESCRIPTION = """
+    Creates an image batch from multiple images.
+    You can set how many inputs the node has,
+    with the **inputcount** and clicking update.
+    """
 
     def combine(self, inputcount, **kwargs):
-        from nodes import ImageBatch  # Make sure 'nodes' is accessible
+        from nodes import ImageBatch
 
         image_batch_node = ImageBatch()
-        image = kwargs["image_1"]
-        for c in range(1, inputcount):
-            new_image = kwargs[f"image_{c + 1}"]
-            (image,) = image_batch_node.batch(image, new_image)
-        return (image,)
+        images = [kwargs[f"image_{i}"] for i in range(1, inputcount + 1) if f"image_{i}" in kwargs]
+        
+        if len(images) < 2:
+            raise ValueError(f"At least 2 images are required. Only {len(images)} provided.")
+        
+        result = images[0]
+        for image in images[1:]:
+            if image is not None:
+                (result,) = image_batch_node.batch(result, image)
+        
+        return (result,)
 
 
 class ComfyUIPixtralVision:
