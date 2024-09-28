@@ -1,6 +1,6 @@
 ### Update 28/9
 
-Add maximum_token option
+Add maximum_tokens option
 
 ### Update 25/9
 
