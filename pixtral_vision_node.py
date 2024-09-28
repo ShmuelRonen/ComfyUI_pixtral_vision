@@ -59,7 +59,8 @@ class ComfyUIPixtralVision:
                 "prompt": ("STRING", {"default": "Describe the image"}),
                 "images": ("IMAGE", {"multiple": True}),
                 "api_key": ("STRING", {"default": "Enter your Mistral API key here"}),
-                "temperature": ("FLOAT", {"default": 0.7, "min": 0.0, "max": 1.5, "step": 0.1})
+                "temperature": ("FLOAT", {"default": 0.7, "min": 0.0, "max": 1.5, "step": 0.1}),
+                "maximum_tokens": ("INT", {"default": 1000, "min": 1, "max": 4096, "step": 1})
             }
         }
 
@@ -67,7 +68,7 @@ class ComfyUIPixtralVision:
     FUNCTION = "process"
     CATEGORY = "ComfyUI/Pixtral Vision"
 
-    def process(self, prompt, images, api_key, temperature):
+    def process(self, prompt, images, api_key, temperature, maximum_tokens):
         try:
             image_urls = []
             for image in images:
@@ -100,7 +101,6 @@ class ComfyUIPixtralVision:
                 base64_image = base64.b64encode(buffered.getvalue()).decode('utf-8')
                 image_urls.append(f"data:image/jpeg;base64,{base64_image}")
 
-
             headers = {
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json"
@@ -119,7 +119,8 @@ class ComfyUIPixtralVision:
             data = {
                 "model": "pixtral-12b-2409",
                 "messages": messages,
-                "temperature": temperature
+                "temperature": temperature,
+                "max_tokens": maximum_tokens
             }
 
             logger.info("Sending request to Mistral API")
