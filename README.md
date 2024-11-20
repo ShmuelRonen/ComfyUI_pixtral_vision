@@ -13,9 +13,9 @@ Add multiply images input node - 'Multi Images Input'
 # ComfyUI_pixtral_vision
 The `ComfyUI_pixtral_vision` is a powerful ComfyUI node designed to integrate seamlessly with the Mistral Pixtral API. It facilitates the analysis of images through deep learning models, interpreting and describing the visual content. Users can input an image directly and provide prompts for context, utilizing an API key for authentication. 
 
-![imagey](https://github.com/user-attachments/assets/4bb514b0-bdd3-40a4-be39-4c0fb2eef795)
+![image](https://github.com/user-attachments/assets/44b5786c-bb5f-411e-ac93-3d9999ea8737)
 
-![image](https://github.com/user-attachments/assets/2bc9a32e-9657-49c6-8ebf-49221386a2c3)
+![image](https://github.com/user-attachments/assets/6f9ab1e9-d717-4029-a558-379a035ae13e)
 
 
 ## Overview
