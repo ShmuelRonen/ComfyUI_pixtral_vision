@@ -13,12 +13,11 @@ app.registerExtension({
         // Add a text widget for preview
         const widget = ComfyWidgets.STRING(this, "display_text", ["STRING", { multiline: true }], app);
         widget.widget.inputEl.readOnly = true;
-        widget.widget.inputEl.style.opacity = 0.6;
-        // Match ComfyUI's default text size and styling
-        widget.widget.inputEl.style.fontSize = "14px";  // Increased from 12px
-        widget.widget.inputEl.style.padding = "8px";    // Increased from 4px
-        widget.widget.inputEl.style.lineHeight = "1.4"; // Added line height
-        widget.widget.inputEl.style.fontFamily = "monospace"; // Added monospace font
+        widget.widget.inputEl.style.color = "#ffffff";  
+        widget.widget.inputEl.style.fontSize = "16px";
+        widget.widget.inputEl.style.padding = "8px";
+        widget.widget.inputEl.style.lineHeight = "1.4";
+        widget.widget.inputEl.style.fontFamily = "monospace";
 
         return r;
       };
