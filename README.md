@@ -1,8 +1,12 @@
-### Update 28/9
+### Update 20 nov
+
+add preview_text node
+
+### Update 28 sep
 
 Add maximum_tokens option
 
-### Update 25/9
+### Update 25 sep
 
 Add multiply images input node - 'Multi Images Input'
 
