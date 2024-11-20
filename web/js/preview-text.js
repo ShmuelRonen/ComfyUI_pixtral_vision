@@ -14,8 +14,11 @@ app.registerExtension({
         const widget = ComfyWidgets.STRING(this, "display_text", ["STRING", { multiline: true }], app);
         widget.widget.inputEl.readOnly = true;
         widget.widget.inputEl.style.opacity = 0.6;
-        widget.widget.inputEl.style.fontSize = "12px";
-        widget.widget.inputEl.style.padding = "4px";
+        // Match ComfyUI's default text size and styling
+        widget.widget.inputEl.style.fontSize = "14px";  // Increased from 12px
+        widget.widget.inputEl.style.padding = "8px";    // Increased from 4px
+        widget.widget.inputEl.style.lineHeight = "1.4"; // Added line height
+        widget.widget.inputEl.style.fontFamily = "monospace"; // Added monospace font
 
         return r;
       };
