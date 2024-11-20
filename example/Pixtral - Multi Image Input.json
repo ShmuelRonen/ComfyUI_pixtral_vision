@@ -1,59 +1,60 @@
 {
-  "last_node_id": 26,
-  "last_link_id": 12,
+  "last_node_id": 29,
+  "last_link_id": 14,
   "nodes": [
     {
-      "id": 15,
-      "type": "LoadImage",
-      "pos": {
-        "0": 394,
-        "1": 5800
-      },
-      "size": {
-        "0": 315,
-        "1": 314
-      },
+      "id": 27,
+      "type": "preview_text",
+      "pos": [
+        1201,
+        5840
+      ],
+      "size": [
+        479.7872619628906,
+        617.3587646484375
+      ],
       "flags": {},
-      "order": 0,
+      "order": 5,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 13,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            3,
-            5
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "Node name for S&R": "preview_text"
       },
       "widgets_values": [
-        " (9).png",
-        "image"
+        "",
+        "Sure, let's break down the content of the images:\n\n1. **First Image**:\n   - A light blue electric guitar is prominently displayed in a black hard case with a red plush interior.\n   - The guitar features two pickups and multiple control knobs.\n   - There is documentation visible within the case, likely including information about the guitar or warranty cards.\n\n2. **Second Image**:\n   - A close-up portrait of a woman with blonde hair, blue eyes, and light skin tone.\n   - She is wearing a top with a floral pattern.\n   - The background is a plain, dark gray or black color, putting the focus entirely on her face and upper body.\n\n3. **Third Image**:\n   - A close-up of a woman with long braided hair, wearing a low-cut red top.\n   - She has dark skin and is adorned with a heart-shaped necklace.\n   - The background is warmly lit with visible candles, creating a cozy and intimate atmosphere.\n\nThese images cover a variety of subjects, including musical instruments and portraits of women, each with their unique settings and themes."
       ]
     },
     {
       "id": 16,
       "type": "LoadImage",
-      "pos": {
-        "0": 45,
-        "1": 5985
-      },
-      "size": {
-        "0": 315,
-        "1": 314
-      },
+      "pos": [
+        45,
+        5985
+      ],
+      "size": [
+        315,
+        314
+      ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -76,21 +77,60 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "test.png",
+        "WhatsApp Image 2024-11-19 at 09.19.58_4fb4d760.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        394,
+        5800
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "davygrolton335_guitar 9.jpg",
         "image"
       ]
     },
     {
       "id": 24,
       "type": "MultiImagesInput",
-      "pos": {
-        "0": 829,
-        "1": 5865
-      },
-      "size": {
-        "0": 210,
-        "1": 122
-      },
+      "pos": [
+        829,
+        5865
+      ],
+      "size": [
+        210,
+        122
+      ],
       "flags": {},
       "order": 3,
       "mode": 0,
@@ -110,7 +150,7 @@
         {
           "name": "image_3",
           "type": "IMAGE",
-          "link": 10
+          "link": 14
         }
       ],
       "outputs": [
@@ -134,14 +174,14 @@
     {
       "id": 13,
       "type": "LoadImage",
-      "pos": {
-        "0": 394,
-        "1": 6184
-      },
-      "size": {
-        "0": 315,
-        "1": 314
-      },
+      "pos": [
+        394,
+        6184
+      ],
+      "size": [
+        315,
+        314
+      ],
       "flags": {},
       "order": 2,
       "mode": 0,
@@ -152,7 +192,8 @@
           "type": "IMAGE",
           "links": [
             1,
-            10
+            10,
+            14
           ],
           "slot_index": 0
         },
@@ -166,61 +207,21 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "flux_00715_.png",
+        "ComfyUI_temp_ljxqf_00011_.png",
         "image"
-      ]
-    },
-    {
-      "id": 26,
-      "type": "ShowText|pysssss",
-      "pos": {
-        "0": 1213,
-        "1": 5824
-      },
-      "size": [
-        484.3642837244179,
-        680.978691758346
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 12,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "Certainly! Here's a summary of the images you've shared:\n\n1. **Image 1**: A detailed illustration of a red robot with large, yellow eyes and two antennae on its head. The robot has a complex mechanical design with visible joints and mechanical parts.\n\n2. **Image 2**: A surreal image of a person with a glass dome on their head. Inside the dome, there are green plants growing. The person has pale skin and closed eyes, giving a futuristic and somewhat unsettling appearance.\n\n3. **Image 3**: A black and white photograph of a person receiving a head massage. The person being massaged has their eyes closed, relaxing, while another person's hands are placed on their head, providing the massage.\n\nThese images showcase creative and imaginative themes, including robotics, futuristic human enhancements, and relaxation/well-being practices."
       ]
     },
     {
       "id": 25,
       "type": "ComfyUIPixtralVision",
-      "pos": {
-        "0": 826,
-        "1": 6063
-      },
-      "size": {
-        "0": 315,
-        "1": 106
-      },
+      "pos": [
+        826,
+        6063
+      ],
+      "size": [
+        315,
+        130
+      ],
       "flags": {},
       "order": 4,
       "mode": 0,
@@ -236,7 +237,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            12
+            13
           ],
           "slot_index": 0
         }
@@ -247,7 +248,8 @@
       "widgets_values": [
         "how many images?",
         "",
-        0.7
+        0.7,
+        1000
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -311,22 +313,30 @@
       "IMAGE"
     ],
     [
-      12,
+      13,
       25,
       0,
-      26,
+      27,
       0,
       "STRING"
+    ],
+    [
+      14,
+      13,
+      0,
+      24,
+      2,
+      "IMAGE"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7972024500000011,
+      "scale": 0.9646149645000006,
       "offset": [
-        495.8952664583239,
-        -5514.586800236535
+        83.29690727659985,
+        -5677.3654836576725
       ]
     }
   },
