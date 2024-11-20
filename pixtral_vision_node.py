@@ -4,12 +4,48 @@ import io
 from PIL import Image
 import torch
 import logging
+import os
+import hashlib
+import folder_paths
+import sys
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-        
+def get_unique_hash(string):
+    hash_object = hashlib.sha1(string.encode())
+    unique_hash = hash_object.hexdigest()
+    return unique_hash
+
+class preview_text:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "text": ("STRING", {"forceInput": True, "dynamicPrompts": False}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    FUNCTION = "run"
+    OUTPUT_NODE = True
+    OUTPUT_IS_LIST = (True,)
+
+    CATEGORY = "ComfyUI/Pixtral Vision"
+
+    def run(self, text):
+        if not isinstance(text, list):
+            text = [text]
+            
+        # Type correction
+        texts = []
+        for t in text:
+            if not isinstance(t, str):
+                t = str(t)
+            texts.append(t)
+
+        return {"ui": {"text": texts}, "text": texts}
         
 class MultiImagesInput:
     @classmethod
@@ -49,7 +85,6 @@ class MultiImagesInput:
                 (result,) = image_batch_node.batch(result, image)
         
         return (result,)
-
 
 class ComfyUIPixtralVision:
     @classmethod
@@ -140,8 +175,16 @@ class ComfyUIPixtralVision:
             logger.exception(error_message)
             return (error_message,)
 
-
+# Register all nodes
 NODE_CLASS_MAPPINGS = {
     "ComfyUIPixtralVision": ComfyUIPixtralVision,
     "MultiImagesInput": MultiImagesInput,
+    "preview_text": preview_text,
+}
+
+# Optional: Add descriptions for the nodes
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "ComfyUIPixtralVision": "Pixtral Vision",
+    "MultiImagesInput": "Multi Images Input",
+    "preview_text": "Preview Text"
 }
