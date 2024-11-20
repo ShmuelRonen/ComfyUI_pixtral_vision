@@ -13,7 +13,7 @@ app.registerExtension({
         // Add a text widget for preview
         const widget = ComfyWidgets.STRING(this, "display_text", ["STRING", { multiline: true }], app);
         widget.widget.inputEl.readOnly = true;
-        widget.widget.inputEl.style.color = "#ffffff";  
+        widget.widget.inputEl.style.color = "rgba(255, 255, 255, 0.9)";  // 90% white
         widget.widget.inputEl.style.fontSize = "16px";
         widget.widget.inputEl.style.padding = "8px";
         widget.widget.inputEl.style.lineHeight = "1.4";
